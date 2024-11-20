@@ -41,9 +41,8 @@ public class Lection4Homework {
     public static int calculateSum(int... elements) {
 
         int res = 0;
-        for (int i = 0; i < elements.length; i++)
-        {
-           res = res + elements[i];
+        for (int element : elements) {
+            res = res + element;
         }
         return res;
     }
