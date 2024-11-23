@@ -23,7 +23,60 @@ public class Lection5_Homework {
         System.out.println("11 - " + isPrime(11));
         System.out.println("13 - " + isPrime(13));
 
+        System.out.println(checkNumberSign(5));
+        System.out.println(checkNumberSign(-5));
+        System.out.println(checkNumberSign(0));
+
+        System.out.println(printEvenNumbers(10));
+        System.out.println(printEvenNumbers(15));
+        System.out.println(printEvenNumbers(1));
+        System.out.println(printEvenNumbers(-4));
+
     }
+    public static String printEvenNumbers(int N) {
+        if (N < 1){
+            return "";
+        }
+        String s = "";
+        for (int i = 1; i <= N; i++){
+            if (i%2 == 0){
+                s = s + " " + i;
+            }
+        }
+        return s.trim();
+    }
+
+    public static String getWeekday(int dayNumber) {
+        switch (dayNumber){
+            case 1:
+                return "Monday";
+            case 2:
+                return "Tuesday";
+            case 3:
+                return "Wednesday";
+            case 4:
+                return "Thursday";
+            case 5:
+                return "Friday";
+            case 6:
+                return "Saturday";
+            case 7:
+                return "Sunday";
+            default: return "Wrong number";
+
+        }
+    }
+
+    public static char checkNumberSign(int number) {
+        if(number == 0){
+            return '0';
+        } else if(number < 0){
+            return '-';
+        }else{
+            return '+';
+        }
+    }
+
     public static void checkAge(int age){
         if (age < 18 && age >= 0){
             System.out.println("Ви не є дорослою особою");
