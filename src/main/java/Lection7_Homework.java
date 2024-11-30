@@ -14,9 +14,10 @@ public class Lection7_Homework {
         System.out.println(xyzMiddle("AxyzBB"));
         System.out.println(xyzMiddle("AxyzBBC"));
 
-        zipZap("zipXzap");
-        zipZap("zopzop");
-        zipZap("zzzopzop");
+        System.out.println(zipZap("ziphjzap"));
+        System.out.println(zipZap("zopzop"));
+        System.out.println(zipZap("zzzopzop"));
+
 
         System.out.println(xyzThere("abcxyz"));
         System.out.println(xyzThere("abc.xyz"));
@@ -98,16 +99,17 @@ public class Lection7_Homework {
         return res;
     }
 
-    public static void zipZap(String s){
+    public static String zipZap(String s){
+        StringBuilder str = new StringBuilder();
         for (int i = 0; i< s.length(); i++){
             if(s.charAt(i) == 'z' && s.charAt(i+2) == 'p'){
-                System.out.print(s.charAt(i));
+                str.append(s.charAt(i));
                 i++;
             }else {
-                System.out.print(s.charAt(i));
+                str.append(s.charAt(i));
             }
         }
-        System.out.println("");
+        return str.toString();
     }
 
     public static boolean xyzThere(String s){
