@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Lection7_Homework {
     public static void main(String[] args) {
@@ -22,6 +21,36 @@ public class Lection7_Homework {
         System.out.println(xyzThere("abcxyz"));
         System.out.println(xyzThere("abc.xyz"));
         System.out.println(xyzThere("xyz.abc"));
+
+        System.out.println(sumDigits("aa1bc2d3"));
+        System.out.println(sumDigits("aa11b33"));
+        System.out.println(sumDigits("Chocolate"));
+
+        System.out.println(containsBob("abcbob"));
+        System.out.println(containsBob("b9b"));
+        System.out.println(containsBob("bac"));
+    }
+
+    public static int sumDigits(String str) {
+        int sum = 0;
+        for (int i = 0; i<str.length(); i++){
+            if (Character.isDigit(str.charAt(i))){
+                sum = sum + Integer.parseInt(str.substring(i,i+1));
+            }
+        }
+        return sum;
+    }
+
+    public static boolean containsBob(String str) {
+        boolean res = false;
+        for (int i = 0; i< str.length()-2; i++){
+            if(str.charAt(i) == str.charAt(i+2) && str.charAt(i)== 'b'){
+                return true;
+            }else {
+                res = false;
+            }
+        }
+        return res;
     }
 
     public static String repeatEnd(String s, int a) {
