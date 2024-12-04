@@ -54,7 +54,16 @@ public class Lection8_Homework {
         System.out.println(countCode("cozexxcope"));
         System.out.println(countCode("hi"));
 
+        System.out.println("countEvenInts");
+        System.out.println(countEvenInts(numArray3));
+        System.out.println(countEvenInts(numArray4));
+        System.out.println(countEvenInts(numArray5));
 
+        System.out.println("endsWith");
+        System.out.println(endsWith("AbC", "HiaBc"));
+        System.out.println(endsWith("abc", "abXabc"));
+        System.out.println(endsWith("Hiabc", "abc"));
+        System.out.println(endsWith("Hiadbfc", "abc"));
     }
 
     public static boolean catDog(String str){
@@ -162,4 +171,35 @@ public class Lection8_Homework {
         return count;
     }
 
+    public static int countEvenInts(int[] numArray){
+        int count = 0;
+        for (int i = 0; i < numArray.length; i++){
+            if (numArray[i] % 2 == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static boolean endsWith(String str1, String str2){
+        boolean res = false;
+        if (str1.length() > str2.length() && str1.toLowerCase().contains(str2.toLowerCase())){
+            for (int i = str2.length()-1; i >=0; i-- ){
+                if (str2.toLowerCase().charAt(i) == str1.toLowerCase().charAt(i + str1.length()-str2.length())){
+                    res = true;
+                }else {
+                    return false;
+                }
+            }
+        } else if (str2.length() > str1.length() && str2.toLowerCase().contains(str1.toLowerCase())){
+            for (int i = str1.length()-1; i >=0; i-- ){
+                if (str1.toLowerCase().charAt(i) == str2.toLowerCase().charAt(i + str2.length()-str1.length())){
+                    res = true;
+                }else {
+                    return false;
+                }
+            }
+        }
+        return res;
+    }
 }
