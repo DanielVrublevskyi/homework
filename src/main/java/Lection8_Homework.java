@@ -74,7 +74,9 @@ public class Lection8_Homework {
         int[] numArray14 = new int[]{2, 2, 2};
 
         System.out.println(Arrays.toString(separateEvenOdd(numArray4)));
+        System.out.println(Arrays.toString(separateEvenOdd2(numArray4)));
         System.out.println(Arrays.toString(separateEvenOdd(numArray5)));
+        System.out.println(Arrays.toString(separateEvenOdd2(numArray5)));
         System.out.println(Arrays.toString(separateEvenOdd(numArray12)));
         System.out.println(Arrays.toString(separateEvenOdd(numArray13)));
         System.out.println(Arrays.toString(separateEvenOdd(numArray14)));
