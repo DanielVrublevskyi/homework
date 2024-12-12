@@ -15,5 +15,11 @@ public class Lection9_Homework {
         System.out.println("Name: " + Alice.getName() + ", Age: " + Alice.getAge() + ", Profession: " + Alice.getProfession());
         Alice.setProfession("Designer");
         System.out.println("Name: " + Alice.getName() + ", Age: " + Alice.getAge() + ", Profession: " + Alice.getProfession());
+
+        System.out.println("Using toString");
+        System.out.println(John);
+        System.out.println(Mary);
+        System.out.println(Bob);
+        System.out.println(Alice);
     }
 }

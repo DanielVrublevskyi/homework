@@ -34,4 +34,9 @@ public class Person {
     public String getProfession() {
         return profession;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Age: " + age +", Profession: " + profession;
+    }
 }
