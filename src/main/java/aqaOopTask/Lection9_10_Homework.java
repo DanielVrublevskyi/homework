@@ -3,9 +3,9 @@ package aqaOopTask;
 public class Lection9_10_Homework {
     public static void main(String[] args) {
 
-        Man John = new Man("John", 30, PersonRole.ENGINEER.getPersoneRoleString(), "Male");
+        Man John = new Man("John", 30, PersonRole.ENGINEER.getPersoneRoleString());
         Woman Mary = new Woman("Mary", 25, PersonRole.TEACHER.getPersoneRoleString(), "Female");
-        Man Bob = new Man("Bob", 35, PersonRole.DOCTOR.getPersoneRoleString(), "Male");
+        Man Bob = new Man("Bob", 35, PersonRole.DOCTOR.getPersoneRoleString());
 
         System.out.print("1. ");
         John.displayInformation();

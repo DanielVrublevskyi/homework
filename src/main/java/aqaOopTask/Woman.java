@@ -6,7 +6,7 @@ public class Woman extends Person implements Displayable{
 
     public Woman(String name, int age, String profession, String sex) {
         super(name, age, profession);
-        Woman.sex = sex;
+        this.sex = sex;
     }
 
     public static String getSex() {

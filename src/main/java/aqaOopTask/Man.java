@@ -2,20 +2,16 @@ package aqaOopTask;
 
 public class Man extends Person implements Displayable{
 
-    private String sex;
+    private static final String sex = "Male";
 
-    public Man(String name, int age, String profession, String sex) {
+    public Man(String name, int age, String profession) {
         super(name, age, profession);
-        this.sex = sex;
     }
 
     public String getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
 
     @Override
     public String toString() {
