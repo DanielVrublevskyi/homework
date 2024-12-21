@@ -1,6 +1,6 @@
 package aqaOopTask;
 
-public class Lection9_10_Homework {
+public class Lection9_10_11_Homework {
     public static void main(String[] args) {
 
         Man John = new Man("John", 30, PersonRole.ENGINEER.getPersoneRoleString());
@@ -27,5 +27,12 @@ public class Lection9_10_Homework {
         System.out.println(Mary);
         System.out.println(Bob);
         System.out.println("2. " + Alice);
+
+        John.walk();
+        John.displayInformation(2500);
+        John.displayInformation("NY");
+        Alice.walk();
+        Alice.displayInformation(2000);
+        Alice.displayInformation("London");
     }
 }

@@ -1,6 +1,6 @@
 package aqaOopTask;
 
-public class Person {
+public abstract class Person implements Displayable{
     private String name;
     private int age;
     private String profession;
@@ -34,6 +34,19 @@ public class Person {
     public String getProfession() {
         return profession;
     }
+
+    @Override
+    public void displayInformation(int salary) {
+        System.out.println("Name: " + getName() + ", Age: " + getAge() + ", Profession: " + getProfession()+ ", Sex: " + Woman.getSex());
+        System.out.println("Salary: " + salary);
+    }
+
+    @Override
+    public void displayInformation(String city) {
+        System.out.println(getName() + " lives in " + city);
+    }
+
+    public abstract void walk();
 
     @Override
     public String toString() {

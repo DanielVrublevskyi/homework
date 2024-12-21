@@ -26,4 +26,9 @@ public class Woman extends Person implements Displayable{
     public void displayInformation() {
         System.out.println("Name: " + getName() + ", Age: " + getAge() + ", Profession: " + getProfession()+ ", Sex: " + getSex());
     }
+
+    @Override
+    public void walk() {
+        System.out.println(this.getName() + " goes to the SPA");
+    }
 }
