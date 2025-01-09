@@ -11,6 +11,40 @@ public class Lection13_Homework {
         System.out.println(mergeStringsByFirstChar(array2));
         System.out.println(buildResultString(array));
 
+        List<Integer> intList = new ArrayList<>();
+        intList.add(3);
+        intList.add(2);
+        intList.add(0);
+        intList.add(7);
+        intList.add(7);
+        intList.add(7);
+        intList.add(3);
+        intList.add(7);
+        System.out.println("The most frequent value from the list: " + frequentElement(intList));
+
+        LinkedHashSet<Integer> set1 = new LinkedHashSet<>();
+        set1.add(1);
+        set1.add(2);
+        set1.add(3);
+        set1.add(4);
+        LinkedHashSet<Integer> set2 = new LinkedHashSet<>();
+        set2.add(3);
+        set2.add(5);
+        set2.add(6);
+
+        System.out.println(ifOneOfTheValuesExists(set1, set2));
+
+
+        TreeSet<Integer> treeSet1 = new TreeSet<>();
+        treeSet1.add(1);
+        treeSet1.add(2);
+        treeSet1.add(3);
+        treeSet1.add(4);
+        TreeSet<Integer> treeSet2 = new TreeSet<>();
+        treeSet2.add(3);
+        treeSet2.add(5);
+        treeSet2.add(6);
+        System.out.println(newSet(treeSet1, treeSet2));
 
     }
 
@@ -70,5 +104,44 @@ public class Lection13_Homework {
             }
         }
         return strSet;
+    }
+
+    public static int frequentElement(List<Integer> intList) {
+        int i = 0;
+        Map<Integer, Integer> strMap = new LinkedHashMap<>();
+        for (int a : intList) {
+            if (!strMap.containsKey(a)) {
+                strMap.put(a, 1);
+            } else {
+                strMap.put(a, strMap.get(a) + 1);
+            }
+        }
+        List<Integer> values = new ArrayList<>(strMap.values());
+        int maxValue = Collections.max(values);
+        for (Map.Entry<Integer, Integer> entry : strMap.entrySet()) {
+            if (entry.getValue() == maxValue) {
+                i = entry.getKey();
+            }
+        }
+        return i;
+    }
+
+    public static boolean ifOneOfTheValuesExists(LinkedHashSet<Integer> set1, LinkedHashSet<Integer> set2) {
+        boolean res = false;
+        for (int intSet1 : set1) {
+            for (int intSet2 : set2) {
+                if (intSet1 == intSet2) {
+                    System.out.println("set 1 value: " + intSet1 + ", set 2 value: " + intSet2);
+                    return true;
+                }
+            }
+        }
+        return res;
+    }
+
+    public static TreeSet<Integer> newSet(TreeSet<Integer> set1, TreeSet<Integer> set2) {
+        TreeSet<Integer> mergedTreeSet = new TreeSet<>(set1);
+        mergedTreeSet.addAll(set2);
+        return mergedTreeSet;
     }
 }
