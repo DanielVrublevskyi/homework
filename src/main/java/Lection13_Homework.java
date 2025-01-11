@@ -27,8 +27,10 @@ public class Lection13_Homework {
         set1.add(2);
         set1.add(3);
         set1.add(4);
+        set1.add(5);
         LinkedHashSet<Integer> set2 = new LinkedHashSet<>();
         set2.add(3);
+        set2.add(4);
         set2.add(5);
         set2.add(6);
 
@@ -46,6 +48,48 @@ public class Lection13_Homework {
         treeSet2.add(6);
         System.out.println(newSet(treeSet1, treeSet2));
 
+        removeElementsNotInSet(set1, set2);
+
+        System.out.println(countStringAppearances(array));
+
+
+    }
+
+    public static Map<String, Boolean> countStringAppearances(String[] strings) {
+        Map<String, Boolean> count = new LinkedHashMap<>();
+        for (String s : strings) {
+            if (!count.containsKey(s)) {
+                count.put(s, false);
+            } else {
+                count.put(s, true);
+            }
+        }
+        return count;
+    }
+
+    public static <T> void removeElementsNotInSet(LinkedHashSet<T> set1, LinkedHashSet<T> set2) {
+        Object[] set1Array = set1.toArray();
+        for (int i = 0; i < set1Array.length; i++) {
+            if (!set2.contains(set1Array[i])) {
+                System.out.println("set1 value: " + set1Array[i] + " is removed from set1");
+                set1.remove(set1Array[i]);
+            }
+        }
+        Object[] set2Array = set2.toArray();
+        for (int i = 0; i < set2Array.length; i++) {
+            if (!set1.contains(set2Array[i])) {
+                System.out.println("set2 value: " + set2Array[i] + " is removed from set2");
+                set2.remove(set2Array[i]);
+            }
+        }
+        System.out.println(set1);
+        System.out.println(set2);
+    }
+
+    public static <T> List<T> removeDuplicates(List<T> list) {
+        TreeSet<T> set = new TreeSet<T>();
+        set.addAll(list);
+        return new ArrayList<>(set);
     }
 
     public static Map<String, Integer> getLengthOfStrings(String[] array) {
