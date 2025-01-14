@@ -1,29 +1,43 @@
 package aqaOopTask;
 
-public abstract class Person implements Displayable{
+public abstract class Person implements Displayable {
     private String name;
     private int age;
     private String profession;
 
-    public Person(String name, int age, String profession){
-        this.name = name;
-        this.age = age;
+    public Person(String name, int age, String profession) {
+        try {
+            setName(name);
+        } catch (CustomException e) {
+            e.printStackTrace();
+        }
+        try {
+            setAge(age);
+        }catch (IllegalArgumentException e){
+            e.printStackTrace();
+        }
         this.profession = profession;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws IllegalArgumentException {
+        if (age < 0) {
+            throw new IllegalArgumentException(getName() + "'s Age should be 0 or higher");
+        }
         this.age = age;
     }
 
-    public void setName(String name){
+    public void setName(String name) throws CustomException {
+        if (name == null || name.isEmpty()) {
+            throw new CustomException("Name can't be null or empty");
+        }
         this.name = name;
     }
 
-    public void setProfession(String profession){
+    public void setProfession(String profession) {
         this.profession = profession;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
@@ -37,7 +51,7 @@ public abstract class Person implements Displayable{
 
     @Override
     public void displayInformation(int salary) {
-        System.out.println("Name: " + getName() + ", Age: " + getAge() + ", Profession: " + getProfession()+ ", Sex: " + Woman.getSex());
+        System.out.println("Name: " + getName() + ", Age: " + getAge() + ", Profession: " + getProfession() + ", Sex: " + Woman.getSex());
         System.out.println("Salary: " + salary);
     }
 
@@ -50,6 +64,6 @@ public abstract class Person implements Displayable{
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Age: " + age +", Profession: " + profession;
+        return "Name: " + name + ", Age: " + age + ", Profession: " + profession;
     }
 }
