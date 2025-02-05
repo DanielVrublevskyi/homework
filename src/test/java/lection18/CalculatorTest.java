@@ -1,8 +1,11 @@
+package lection18;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import static org.testng.Assert.fail;
 
 public class CalculatorTest{
+
     Calculator calculator = new Calculator();
 
     @AfterClass

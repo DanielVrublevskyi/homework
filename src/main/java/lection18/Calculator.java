@@ -1,3 +1,5 @@
+package lection18;
+
 public class Calculator {
 
     public double add(double a, double b) {
