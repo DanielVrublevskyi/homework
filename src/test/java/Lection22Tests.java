@@ -1,11 +1,12 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,10 @@ public class Lection22Tests {
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+        if (!result.isSuccess()) {
+            takeScreenshot();
+        }
         driver.quit();
     }
 
@@ -72,6 +76,15 @@ public class Lection22Tests {
             i++;
             driver.close();
             driver.switchTo().window(mainWindow);
+        }
+    }
+
+    public void takeScreenshot(){
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            org.openqa.selenium.io.FileHandler.copy(screenshot, new File("target/screenshot.png"));
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
 }
