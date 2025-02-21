@@ -8,25 +8,25 @@ import static lection23.WaitElement.waitClickabilityOfElementLocatedBy;
 import static lection23.WaitElement.waitVisibilityOfElementLocatedBy;
 
 public class Actions {
-    private static WebDriver driver = BrowserFactory.getDriver();
+    private WebDriver driver = BrowserFactory.getDriver();
 
-    public static void waitAndClick(By by) {
+    public void waitAndClick(By by) {
         waitVisibilityOfElementLocatedBy(by);
         waitClickabilityOfElementLocatedBy(by);
-        driver.findElement(by).click();
+        this.driver.findElement(by).click();
     }
 
-    public static Select selectBy(By by) {
+    public Select waitAndSelectBy(By by) {
         waitVisibilityOfElementLocatedBy(by);
         waitClickabilityOfElementLocatedBy(by);
-        return new Select(driver.findElement(by));
+        return new Select(this.driver.findElement(by));
     }
 
-    public static void enterData(By by, String data) {
+    public void waitAndEnterData(By by, String data) {
         waitVisibilityOfElementLocatedBy(by);
         waitClickabilityOfElementLocatedBy(by);
-        driver.findElement(by).click();
-        driver.findElement(by).clear();
-        driver.findElement(by).sendKeys(data);
+        this.driver.findElement(by).click();
+        this.driver.findElement(by).clear();
+        this.driver.findElement(by).sendKeys(data);
     }
 }

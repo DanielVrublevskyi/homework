@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import static lection23.BrowserFactory.getDriver;
 
-public class GaragePage {
+public class GaragePage extends Actions {
 
     private By addCarButton = By.cssSelector("button.btn-primary");
     private By addCarBrandDropdown = By.id("addCarBrand");
@@ -17,48 +17,47 @@ public class GaragePage {
     private By carMileage = By.cssSelector("input[name='miles']");
     private By carLogo = By.cssSelector("div.car-logo img");
 
-    public GaragePage clickAddCarButton(){
-        Actions.waitAndClick(addCarButton);
+    public GaragePage clickAddCarButton() {
+        waitAndClick(addCarButton);
         return this;
     }
 
-    public GaragePage selectCarBrand(String brand){
-        Actions.selectBy(addCarBrandDropdown).selectByVisibleText(brand);
+    public GaragePage selectCarBrand(String brand) {
+        waitAndSelectBy(addCarBrandDropdown).selectByVisibleText(brand);
         return this;
     }
 
-    public GaragePage selectCarModel(String model){
-        Actions.selectBy(addCarModelDropdown).selectByVisibleText(model);
+    public GaragePage selectCarModel(String model) {
+        waitAndSelectBy(addCarModelDropdown).selectByVisibleText(model);
         return this;
     }
 
-    public GaragePage enterMileage(String mileage){
-        Actions.enterData(addCarMileage, mileage);
+    public GaragePage enterMileage(String mileage) {
+        waitAndEnterData(addCarMileage, mileage);
         return this;
     }
 
-    public GaragePage clickAddButton(){
-        Actions.waitAndClick(addButton);
+    public GaragePage clickAddButton() {
+        waitAndClick(addButton);
         WaitElement.waitInsisibilityOfElementLocatedBy(addButton);
         return this;
     }
 
-    public WebElement getCarName(){
+    public WebElement getCarName() {
         return getDriver().findElement(carName);
     }
 
-    public WebElement getCarUpdateMileage(){
+    public WebElement getCarUpdateMileage() {
         return getDriver().findElement(carUpdateMileage);
     }
 
-    public String getCarMileage(){
+    public String getCarMileage() {
         return getDriver().findElement(carMileage).getAttribute("value");
     }
 
-    public WebElement getCarLogo(){
+    public WebElement getCarLogo() {
         return getDriver().findElement(carLogo);
     }
-
 
 
 }

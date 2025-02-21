@@ -9,7 +9,7 @@ import java.time.Duration;
 import static lection23.BrowserFactory.getDriver;
 
 public class WaitElement {
-    static WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+    private static WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
     public static void waitVisibilityOfElementLocatedBy(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
