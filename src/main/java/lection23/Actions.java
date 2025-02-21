@@ -10,7 +10,6 @@ import static lection23.WaitElement.waitVisibilityOfElementLocatedBy;
 public class Actions {
     private static WebDriver driver = BrowserFactory.getDriver();
 
-
     public static void waitAndClick(By by) {
         waitVisibilityOfElementLocatedBy(by);
         waitClickabilityOfElementLocatedBy(by);

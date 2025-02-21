@@ -1,8 +1,6 @@
 package lection23;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 
 import static lection23.BrowserFactory.getDriver;
@@ -18,7 +16,6 @@ public class GaragePage {
     private By carUpdateMileage = By.cssSelector("p.car_update-mileage");
     private By carMileage = By.cssSelector("input[name='miles']");
     private By carLogo = By.cssSelector("div.car-logo img");
-
 
     public GaragePage clickAddCarButton(){
         Actions.waitAndClick(addCarButton);
