@@ -3,8 +3,6 @@ package lection23;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static lection23.BrowserFactory.getDriver;
-
 public class GaragePage extends Actions {
 
     private By addCarButton = By.cssSelector("button.btn-primary");
@@ -44,19 +42,19 @@ public class GaragePage extends Actions {
     }
 
     public WebElement getCarName() {
-        return getDriver().findElement(carName);
+        return driver.findElement(carName);
     }
 
     public WebElement getCarUpdateMileage() {
-        return getDriver().findElement(carUpdateMileage);
+        return driver.findElement(carUpdateMileage);
     }
 
     public String getCarMileage() {
-        return getDriver().findElement(carMileage).getAttribute("value");
+        return driver.findElement(carMileage).getAttribute("value");
     }
 
     public WebElement getCarLogo() {
-        return getDriver().findElement(carLogo);
+        return driver.findElement(carLogo);
     }
 
 
