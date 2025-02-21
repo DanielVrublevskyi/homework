@@ -39,8 +39,8 @@ public class Lection23Tests {
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Date date = new Date();
         assertTrue(garagePage.getCarUpdateMileage().getText().contains(dateFormat.format(date)));
+        assertEquals(garagePage.getCarMileage(), miles);
         assertTrue(garagePage.getCarLogo().isDisplayed());
         assertTrue(garagePage.getCarLogo().getAttribute("src").endsWith("png"));
-//        assertEquals(garagePage.getCarMileage().getText(), miles);
     }
 }

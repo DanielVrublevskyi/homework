@@ -54,14 +54,8 @@ public class GaragePage {
         return getDriver().findElement(carUpdateMileage);
     }
 
-    public WebElement getCarMileage(){
-        WebElement shadowHost = getDriver().findElement(carMileage);
-        SearchContext context = shadowHost.getShadowRoot();
-        return context.findElement(By.cssSelector("text-field-container"));
-
-//        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-//        SearchContext shadowRoot = (SearchContext) jse.executeScript("return arguments[0].shadowRoot", shadowHost);
-//        return shadowRoot.findElement(By.id("text-field-container"));
+    public String getCarMileage(){
+        return getDriver().findElement(carMileage).getAttribute("value");
     }
 
     public WebElement getCarLogo(){
