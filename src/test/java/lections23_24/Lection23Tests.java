@@ -1,4 +1,4 @@
-package lection23;
+package lections23_24;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -8,7 +8,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static lection23.BrowserFactory.getDriver;
+import static lections23_24.BrowserFactory.getDriver;
 import static org.testng.Assert.*;
 import static org.testng.Assert.assertTrue;
 
