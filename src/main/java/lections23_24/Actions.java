@@ -1,11 +1,11 @@
-package lection23;
+package lections23_24;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import static lection23.WaitElement.waitClickabilityOfElementLocatedBy;
-import static lection23.WaitElement.waitVisibilityOfElementLocatedBy;
+import static lections23_24.WaitElement.waitClickabilityOfElementLocatedBy;
+import static lections23_24.WaitElement.waitVisibilityOfElementLocatedBy;
 
 public class Actions {
     protected WebDriver driver = BrowserFactory.getDriver();

@@ -1,4 +1,4 @@
-package lection23;
+package lections23_24;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,6 +14,7 @@ public class GaragePage extends Actions {
     private By carUpdateMileage = By.cssSelector("p.car_update-mileage");
     private By carMileage = By.cssSelector("input[name='miles']");
     private By carLogo = By.cssSelector("div.car-logo img");
+    private By instructions = By.cssSelector("a[routerlink='instructions']");
 
     public GaragePage clickAddCarButton() {
         waitAndClick(addCarButton);
@@ -41,6 +42,11 @@ public class GaragePage extends Actions {
         return this;
     }
 
+    public GaragePage clickInstructions() {
+        waitAndClick(instructions);
+        return this;
+    }
+
     public WebElement getCarName() {
         return driver.findElement(carName);
     }
@@ -56,6 +62,4 @@ public class GaragePage extends Actions {
     public WebElement getCarLogo() {
         return driver.findElement(carLogo);
     }
-
-
 }
