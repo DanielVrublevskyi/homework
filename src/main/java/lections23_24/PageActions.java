@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import static lections23_24.WaitElement.waitClickabilityOfElementLocatedBy;
 import static lections23_24.WaitElement.waitVisibilityOfElementLocatedBy;
 
-public class Actions {
+public class PageActions {
     protected WebDriver driver = BrowserFactory.getDriver();
 
     public void waitAndClick(By by) {

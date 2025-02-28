@@ -3,16 +3,13 @@ package lections23_24;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InstructionsPage extends Actions {
+public class InstructionsPage extends PageActions {
 
     private By wipersFileDownloadButton = By.xpath("//p[text()='Front windshield wipers on Audi TT']/following-sibling::a");
     private By plugsFileDownloadButton = By.xpath("//p[text()='Spark plugs on Audi TT']/following-sibling::a");
