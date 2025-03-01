@@ -1,9 +1,10 @@
 package lections23_24;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class GaragePage extends Actions {
+public class GaragePage extends PageActions {
 
     private By addCarButton = By.cssSelector("button.btn-primary");
     private By addCarBrandDropdown = By.id("addCarBrand");
@@ -16,26 +17,31 @@ public class GaragePage extends Actions {
     private By carLogo = By.cssSelector("div.car-logo img");
     private By instructions = By.cssSelector("a[routerlink='instructions']");
 
+    @Step("Click 'Add car' button")
     public GaragePage clickAddCarButton() {
         waitAndClick(addCarButton);
         return this;
     }
 
+    @Step("Select car's brand")
     public GaragePage selectCarBrand(String brand) {
         waitAndSelectBy(addCarBrandDropdown).selectByVisibleText(brand);
         return this;
     }
 
+    @Step("Select car's model")
     public GaragePage selectCarModel(String model) {
         waitAndSelectBy(addCarModelDropdown).selectByVisibleText(model);
         return this;
     }
 
+    @Step("Enter mileage")
     public GaragePage enterMileage(String mileage) {
         waitAndEnterData(addCarMileage, mileage);
         return this;
     }
 
+    @Step("Click 'Add' button")
     public GaragePage clickAddButton() {
         waitAndClick(addButton);
         WaitElement.waitInsisibilityOfElementLocatedBy(addButton);

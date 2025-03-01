@@ -14,7 +14,8 @@ public class BrowserFactory {
 
     public static void createDriver(String browserName){
         switch (browserName.toLowerCase()) {
-            case "chrome" : WebDriverManager.chromedriver().setup();
+            case "chrome" :
+                WebDriverManager.chromedriver().setup();
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("profile.default_content_settings.popups", 0);
                 prefs.put("download.default_directory", "C:\\Users\\Daniel\\Documents\\GitHub\\homework\\target");
@@ -24,7 +25,8 @@ public class BrowserFactory {
                 driver = new ChromeDriver(options);
                 driver.manage().window().maximize();
                 break;
-            case "firefox" : WebDriverManager.firefoxdriver().setup();
+            case "firefox" :
+                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
             default : throw new IllegalArgumentException("This browser name");
