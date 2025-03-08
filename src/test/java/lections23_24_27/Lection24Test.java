@@ -1,4 +1,4 @@
-package lections23_24;
+package lections23_24_27;
 
 import listener.TestListener;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static lections23_24.BrowserFactory.getDriver;
+import static lections23_24_27.BrowserFactory.getDriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
