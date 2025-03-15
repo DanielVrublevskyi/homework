@@ -1,4 +1,4 @@
-package lections23_24_27;
+package lections23_24_27_28;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

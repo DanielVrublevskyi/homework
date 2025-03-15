@@ -1,4 +1,4 @@
-package lections23_24_27;
+package lections23_24_27_28;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import io.qameta.allure.*;
 
-import static lections23_24_27.BrowserFactory.getDriver;
+import static lections23_24_27_28.BrowserFactory.getDriver;
 import static org.testng.Assert.*;
 import static org.testng.Assert.assertTrue;
 
