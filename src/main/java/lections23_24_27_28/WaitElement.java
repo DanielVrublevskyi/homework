@@ -1,4 +1,4 @@
-package lections23_24_27;
+package lections23_24_27_28;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 
-import static lections23_24_27.BrowserFactory.getDriver;
+import static lections23_24_27_28.BrowserFactory.getDriver;
 
 public class WaitElement {
     private static WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
