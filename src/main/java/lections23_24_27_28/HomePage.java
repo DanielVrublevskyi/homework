@@ -1,4 +1,4 @@
-package lections23_24_27;
+package lections23_24_27_28;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
