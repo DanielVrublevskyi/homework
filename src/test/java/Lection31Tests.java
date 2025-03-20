@@ -21,6 +21,6 @@ public class Lection31Tests {
                 .given()
                 .when().get("https://qauto.forstudy.space/api/cars/brands");
         response.then().statusCode(200);
-        Assert.assertTrue(ApiHelper.isAudiObjectPresent(response));
+        Assert.assertTrue(ApiHelper.isBrandObjectPresent(response, 1, "Audi"));
     }
 }
